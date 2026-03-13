@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilfred Amimo - Cybersecurity Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+            color: #e0e7ff;
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(10, 14, 39, 0.98);
+            border-bottom: 3px solid #00d9ff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        nav a:hover {
+            color: #00d9ff;
+        }
+        .hero {
+            padding: 6rem 5%;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #00d9ff;
+            font-weight: 800;
+        }
+        .hero .subtitle {
+            font-size: 1.4rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+        .hero p {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: #00d9ff;
+            color: #0a0e27;
+        }
+        .btn-primary:hover {
+            background: #0099cc;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #00d9ff;
+            color: #00d9ff;
+        }
+        .btn-secondary:hover {
+            background: #00d9ff;
+            color: #0a0e27;
+        }
+        section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #00d9ff;
+            font-weight: 800;
+            border-bottom: 2px solid #00d9ff;
+            padding-bottom: 1rem;
+        }
+        .section-subtitle {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: #00d9ff;
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: #00d9ff;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .card p {
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.15);
+            color: #00d9ff;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin: 0.3rem 0.3rem 0.3rem 0;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+        .tag {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.1);
+            color: #00d9ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+        .tag.soc {
+            background: rgba(255, 0, 110, 0.1);
+            color: #ff006e;
+            border-color: rgba(255, 0, 110, 0.2);
+        }
+        #about {
+            background: rgba(0, 217, 255, 0.03);
+        }
+        .about-text {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about-text h3 {
+            color: #00d9ff;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        .about-text p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+            line-height: 1.9;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .skill-box {
+            background: rgba(0, 217, 255, 0.08);
+            padding: 1.5rem;
+            border-left: 4px solid #00d9ff;
+            border-radius: 8px;
+        }
+        .skill-box h4 {
+            color: #00d9ff;
+            margin-bottom: 0.5rem;
+        }
+        .skill-box p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        #projects {
+            background: rgba(255, 0, 110, 0.02);
+        }
+        .project-item {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .project-item:hover {
+            border-color: #00d9ff;
+            background: rgba(30, 41, 59, 0.7);
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .project-item h3 {
+            color: #00d9ff;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-item p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .challenge {
+            background: rgba(255, 0, 110, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #ff006e;
+        }
+        .challenge h4 {
+            color: #ff006e;
+            margin-bottom: 0.5rem;
+        }
+        .challenge p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+        .solution {
+            background: rgba(0, 217, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #00d9ff;
+        }
+        .solution h4 {
+            color: #00d9ff;
+            margin-bottom: 0.5rem;
+        }
+        .solution p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+        .results {
+            background: rgba(0, 217, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+        .results h4 {
+            color: #00d9ff;
+            margin-bottom: 0.5rem;
+        }
+        .result-item {
+            color: #cbd5e1;
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        .view-details {
+            color: #00d9ff;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+        }
+        .modal-content {
+            background-color: #1a1f3a;
+            margin: 5% auto;
+            padding: 2rem;
+            border: 1px solid #00d9ff;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .close {
+            color: #00d9ff;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #ff006e;
+        }
+        .modal h2 {
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #00d9ff;
+            padding-bottom: 1rem;
+        }
+        #contact {
+            background: rgba(0, 217, 255, 0.03);
+        }
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contact-info {
+            background: rgba(0, 217, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .contact-info h3 {
+            color: #00d9ff;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .contact-item {
+            margin: 1rem 0;
+        }
+        .contact-item a {
+            color: #00d9ff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .contact-item a:hover {
+            color: #ff006e;
+        }
+        .contact-form {
+            background: rgba(30, 41, 59, 0.6);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            color: #00d9ff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            background: rgba(10, 14, 39, 0.8);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 8px;
+            color: #e0e7ff;
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00d9ff;
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #00d9ff;
+            color: #0a0e27;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #0099cc;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            border-top: 1px solid rgba(0, 217, 255, 0.2);
+            background: rgba(10, 14, 39, 0.98);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .modal-content {
+                width: 95%;
+                margin: 20% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">WILFRED AMIMO</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1>Cybersecurity Specialist</h1>
+            <p class="subtitle">Blue Team Defense | SOC Analysis | Threat Intelligence</p>
+            <p>Building secure systems and defending against cyber threats through hands-on learning and practical implementation</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-text">
+            <h3>My Journey</h3>
+            <p>I'm passionate about cybersecurity and building practical skills through real-world projects. I focus on blue team operations (defensive security) and SOC analysis (threat detection and response). Every project I work on teaches me something new about protecting systems and organizations.</p>
+            
+            <h3>What I Do</h3>
+            <p>I work on network defense, vulnerability assessments, threat detection, and incident response. I believe in learning by doing, so most of my experience comes from hands-on projects where I've had to solve real security challenges.</p>
+
+            <h3>Skills & Interests</h3>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h4>🛡️ Blue Team Operations</h4>
+                    <p>Network defense, system hardening, and security architecture</p>
+                </div>
+                <div class="skill-box">
+                    <h4>🔍 SOC Analysis</h4>
+                    <p>Threat detection, alert tuning, and incident response</p>
+                </div>
+                <div class="skill-box">
+                    <h4>📊 Log Analysis</h4>
+                    <p>SIEM tools, event correlation, and troubleshooting</p>
+                </div>
+                <div class="skill-box">
+                    <h4>🔐 Vulnerability Scanning</h4>
+                    <p>Security assessments and remediation tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p class="section-subtitle">Click on any project to see detailed information about challenges and solutions</p>
+
+        <div class="project-item" onclick="openModal('project1')">
+            <div class="project-header">
+                <div>
+                    <span class="tag">Blue Team</span>
+                    <h3>Network Segmentation Implementation</h3>
+                </div>
+            </div>
+            <p>Designed and implemented network segmentation for a small organization to isolate critical systems and reduce lateral movement risk.</p>
+            <div class="results">
+                <h4>Initial Results:</h4>
+                <div class="result-item">✓ Segmented 3 core network zones</div>
+                <div class="result-item">✓ Implemented firewall rules between segments</div>
+                <div class="result-item">✓ Reduced potential breach impact by ~40%</div>
+            </div>
+            <span class="view-details">→ Click to see full details</span>
+        </div>
+
+        <div class="project-item" onclick="openModal('project2')">
+            <div class="project-header">
+                <div>
+                    <span class="tag soc">SOC</span>
+                    <h3>SIEM Implementation & Tuning</h3>
+                </div>
+            </div>
+            <p>Set up a SIEM system for centralized log monitoring and created custom detection rules to identify suspicious activities.</p>
+            <div class="results">
+                <h4>Initial Results:</h4>
+                <div class="result-item">✓ Created 25+ detection rules</div>
+                <div class="result-item">✓ Reduced false positives from 80% to ~35%</div>
+                <div class="result-item">✓ Average detection time: 2-3 hours</div>
+            </div>
+            <span class="view-details">→ Click to see full details</span>
+        </div>
+
+        <div class="project-item" onclick="openModal('project3')">
+            <div class="project-header">
+                <div>
+                    <span class="tag">Blue Team</span>
+                    <h3>Vulnerability Assessment & Remediation</h3>
+                </div>
+            </div>
+            <p>Conducted comprehensive vulnerability scans across 40+ systems and tracked remediation efforts with a custom tracking system.</p>
+            <div class="results">
+                <h4>Initial Results:</h4>
+                <div class="result-item">✓ Found 127 vulnerabilities across systems</div>
+                <div class="result-item">✓ Helped prioritize fixes by severity</div>
+                <div class="result-item">✓ Remediated 68% of identified issues</div>
+            </div>
+            <span class="view-details">→ Click to see full details</span>
+        </div>
+
+        <div class="project-item" onclick="openModal('project4')">
+            <div class="project-header">
+                <div>
+                    <span class="tag soc">SOC</span>
+                    <h3>Incident Response Playbook Development</h3>
+                </div>
+            </div>
+            <p>Created incident response procedures for common attack scenarios and conducted tabletop exercises with security team.</p>
+            <div class="results">
+                <h4>Initial Results:</h4>
+                <div class="result-item">✓ Developed 5 comprehensive playbooks</div>
+                <div class="result-item">✓ Team response time improved by ~25%</div>
+                <div class="result-item">✓ Completed 2 successful tabletop exercises</div>
+            </div>
+            <span class="view-details">→ Click to see full details</span>
+        </div>
+
+        <div class="project-item" onclick="openModal('project5')">
+            <div class="project-header">
+                <div>
+                    <span class="tag">Blue Team</span>
+                    <h3>System Hardening Initiative</h3>
+                </div>
+            </div>
+            <p>Hardened 25+ Windows and Linux systems using security baselines and configuration best practices.</p>
+            <div class="results">
+                <h4>Initial Results:</h4>
+                <div class="result-item">✓ Applied CIS Benchmarks to all systems</div>
+                <div class="result-item">✓ Reduced unnecessary services by ~30%</div>
+                <div class="result-item">✓ Improved security posture scores by 28%</div>
+            </div>
+            <span class="view-details">→ Click to see full details</span>
+        </div>
+
+        <div class="project-item" onclick="openModal('project6')">
+            <div class="project-header">
+                <div>
+                    <span class="tag soc">SOC</span>
+                    <h3>Threat Hunting & Intelligence Analysis</h3>
+                </div>
+            </div>
+            <p>Conducted proactive threat hunting using log analysis and threat intelligence to identify potential compromises.</p>
+            <div class="results">
+                <h4>Initial Results:</h4>
+                <div class="result-item">✓ Analyzed 5+ TB of log data</div>
+                <div class="result-item">✓ Identified 3 suspicious patterns</div>
+                <div class="result-item">✓ Created 8 new detection rules from findings</div>
+            </div>
+            <span class="view-details">→ Click to see full details</span>
+        </div>
+    </section><div id="project1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project1')">&times;</span>
+            <h2>Network Segmentation Implementation</h2>
+            <span class="tag">Blue Team</span>
+            
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">The Challenge</h3>
+            <div class="challenge">
+                <h4>What was the problem?</h4>
+                <p>The organization had all systems on a flat network. If one system was compromised, attackers could easily move to others. They needed better isolation of critical systems.</p>
+                <h4 style="margin-top: 0.8rem;">What made it difficult?</h4>
+                <p>• Limited budget and resources<br>• Had to minimize downtime during implementation<br>• Staff didn't understand network segmentation<br>• Existing systems had complex interdependencies</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">My Solution</h3>
+            <div class="solution">
+                <h4>What I did:</h4>
+                <p>• Mapped all network dependencies and communication flows<br>
+                • Designed 3 network zones: Management, Operations, Development<br>
+                • Configured firewall rules to allow only necessary traffic<br>
+                • Implemented VLANs to isolate critical systems<br>
+                • Created documentation and trained staff</p>
+                <h4 style="margin-top: 0.8rem;">Tools I used:</h4>
+                <p>Nmap, Wireshark, pfSense, VLAN configuration</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">What I Learned</h3>
+            <div class="solution">
+                <p>• Network segmentation takes careful planning<br>
+                • Communication with stakeholders is crucial<br>
+                • Testing in lab environment saved time and mistakes<br>
+                • Documentation helps during troubleshooting</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">Results</h3>
+            <div class="results">
+                <div class="result-item">✓ Successfully isolated 3 network zones</div>
+                <div class="result-item">✓ Zero production outages during implementation</div>
+                <div class="result-item">✓ Reduced lateral movement risk by ~40%</div>
+                <div class="result-item">✓ Created reusable network design template</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project2')">&times;</span>
+            <h2>SIEM Implementation & Tuning</h2>
+            <span class="tag soc">SOC</span>
+            
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">The Challenge</h3>
+            <div class="challenge">
+                <h4>What was the problem?</h4>
+                <p>The organization had no centralized logging. Security alerts were scattered across multiple systems, making it impossible to correlate events or detect complex attacks.</p>
+                <h4 style="margin-top: 0.8rem;">What made it difficult?</h4>
+                <p>• Too many false positives (80% of alerts were noise)<br>
+                • Staff overwhelmed by alert volume<br>
+                • No clear baseline for normal activity<br>
+                • Lacked expertise in SIEM rule creation</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">My Solution</h3>
+            <div class="solution">
+                <h4>What I did:</h4>
+                <p>• Set up ELK Stack (Elasticsearch, Logstash, Kibana)<br>
+                • Configured log collection from 20+ sources<br>
+                • Created 25+ custom detection rules based on common attack patterns<br>
+                • Built dashboards for daily monitoring<br>
+                • Implemented baseline deviation detection<br>
+                • Trained team on SIEM operations</p>
+                <h4 style="margin-top: 0.8rem;">Tools I used:</h4>
+                <p>ELK Stack, Logstash, custom Python scripts for rule testing</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">What I Learned</h3>
+            <div class="solution">
+                <p>• Rule tuning takes iteration and testing<br>
+                • False positives are a real problem in SOCs<br>
+                • Understanding normal behavior is key to detecting anomalies<br>
+                • Good documentation saves time during incidents</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">Results</h3>
+            <div class="results">
+                <div class="result-item">✓ Created 25+ detection rules</div>
+                <div class="result-item">✓ Reduced false positives from 80% to 35%</div>
+                <div class="result-item">✓ Average detection time: 2-3 hours (was 6+ hours before)</div>
+                <div class="result-item">✓ Team confidence in alerts increased significantly</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project3')">&times;</span>
+            <h2>Vulnerability Assessment & Remediation</h2>
+            <span class="tag">Blue Team</span>
+            
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">The Challenge</h3>
+            <div class="challenge">
+                <h4>What was the problem?</h4>
+                <p>The organization had no systematic process for identifying and tracking vulnerabilities. They needed to understand their security gaps and prioritize fixes.</p>
+                <h4 style="margin-top: 0.8rem;">What made it difficult?</h4>
+                <p>• Manual scanning and tracking was inefficient<br>
+                • No clear prioritization criteria<br>
+                • Limited resources for patching<br>
+                • Needed to maintain service availability while fixing issues</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">My Solution</h3>
+            <div class="solution">
+                <h4>What I did:</h4>
+                <p>• Conducted comprehensive vulnerability scans using Nessus<br>
+                • Analyzed results and categorized by severity and impact<br>
+                • Created a remediation tracking spreadsheet<br>
+                • Worked with teams to plan and execute patches<br>
+                • Performed validation scans after remediation<br>
+                • Documented lessons learned</p>
+                <h4 style="margin-top: 0.8rem;">Tools I used:</h4>
+                <p>Nessus, OpenVAS, custom Excel tracking, change management process</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">What I Learned</h3>
+            <div class="solution">
+                <p>• Vulnerability management is continuous, not one-time<br>
+                • Prioritization is critical with limited resources<br>
+                • Communication with system owners is essential<br>
+                • Post-remediation validation is crucial</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">Results</h3>
+            <div class="results">
+                <div class="result-item">✓ Identified 127 vulnerabilities across 40+ systems</div>
+                <div class="result-item">✓ Prioritized by severity and business impact</div>
+                <div class="result-item">✓ Remediated 86 vulnerabilities (68% of total)</div>
+                <div class="result-item">✓ Created sustainable remediation process</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project4')">&times;</span>
+            <h2>Incident Response Playbook Development</h2>
+            <span class="tag soc">SOC</span>
+            
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">The Challenge</h3>
+            <div class="challenge">
+                <h4>What was the problem?</h4>
+                <p>When incidents happened, there was no clear process. Teams were confused about roles, responsibilities, and escalation procedures.</p>
+                <h4 style="margin-top: 0.8rem;">What made it difficult?</h4>
+                <p>• Limited incident response experience in the team<br>
+                • No documented procedures or escalation paths<br>
+                • Each incident was handled ad-hoc<br>
+                • Slow response times due to confusion</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">My Solution</h3>
+            <div class="solution">
+                <h4>What I did:</h4>
+                <p>• Researched common attack scenarios (phishing, malware, DDoS)<br>
+                • Created detailed playbooks for 5 scenarios<br>
+                • Defined clear roles and responsibilities<br>
+                • Established escalation procedures and communication chains<br>
+                • Conducted 2 tabletop exercises with the team<br>
+                • Gathered feedback and improved playbooks</p>
+                <h4 style="margin-top: 0.8rem;">Tools I used:</h4>
+                <p>NIST Cybersecurity Framework, Incident Response templates, collaboration tools</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">What I Learned</h3>
+            <div class="solution">
+                <p>• Practice makes perfect (tabletop exercises revealed gaps)<br>
+                • Clear communication is critical during incidents<br>
+                • Different incidents need different approaches<br>
+                • Documentation needs to be accessible and clear</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">Results</h3>
+            <div class="results">
+                <div class="result-item">✓ Developed 5 comprehensive playbooks</div>
+                <div class="result-item">✓ Team response time improved by ~25%</div>
+                <div class="result-item">✓ Completed 2 successful tabletop exercises</div>
+                <div class="result-item">✓ Increased team confidence in handling incidents</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project5')">&times;</span>
+            <h2>System Hardening Initiative</h2>
+            <span class="tag">Blue Team</span>
+            
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">The Challenge</h3>
+            <div class="challenge">
+                <h4>What was the problem?</h4>
+                <p>Systems were installed with default configurations, leaving many unnecessary services running and potential security weaknesses exposed.</p>
+                <h4 style="margin-top: 0.8rem;">What made it difficult?</h4>
+                <p>• Risk of breaking system functionality<br>
+                • Many different OS versions to handle<br>
+                • Limited downtime windows available<br>
+                • Need to balance security and usability</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">My Solution</h3>
+            <div class="solution">
+                <h4>What I did:</h4>
+                <p>• Researched CIS Benchmarks for Windows and Linux<br>
+                • Created hardening checklists for each OS<br>
+                • Tested changes in lab environment first<br>
+                • Implemented changes in batches (test group first)<br>
+                • Documented every change made<br>
+                • Gathered feedback from system users</p>
+                <h4 style="margin-top: 0.8rem;">Tools I used:</h4>
+                <p>CIS Benchmarks, Nessus, custom hardening scripts, change management process</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">What I Learned</h3>
+            <div class="solution">
+                <p>• Lab testing prevents mistakes in production<br>
+                • Change management processes are essential<br>
+                • User feedback is important for successful implementations<br>
+                • Security and functionality must be balanced</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">Results</h3>
+            <div class="results">
+                <div class="result-item">✓ Hardened 25+ Windows and Linux systems</div>
+                <div class="result-item">✓ Reduced unnecessary services by ~30%</div>
+                <div class="result-item">✓ Improved security posture scores by 28%</div>
+                <div class="result-item">✓ Zero production issues during rollout</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project6')">&times;</span>
+            <h2>Threat Hunting & Intelligence Analysis</h2>
+            <span class="tag soc">SOC</span>
+            
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">The Challenge</h3>
+            <div class="challenge">
+                <h4>What was the problem?</h4>
+                <p>The organization only responded to alerts. There was no proactive threat hunting to find compromises that might have evaded detection systems.</p>
+                <h4 style="margin-top: 0.8rem;">What made it difficult?</h4>
+                <p>• Massive amount of log data to analyze (5+ TB)<br>
+                • Unclear what "normal" looks like<br>
+                • Limited threat intelligence to guide hunting<br>
+                • Requires deep technical knowledge</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">My Solution</h3>
+            <div class="solution">
+                <h4>What I did:</h4>
+                <p>• Established baseline of normal network behavior<br>
+                • Created hypotheses based on common attack patterns<br>
+                • Searched logs for indicators of those patterns<br>
+                • Used threat intelligence (MITRE ATT&CK framework)<br>
+                • Investigated suspicious findings<br>
+                • Created new detection rules from findings</p>
+                <h4 style="margin-top: 0.8rem;">Tools I used:</h4>
+                <p>ELK Stack, Splunk queries, MITRE ATT&CK, threat intel feeds</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">What I Learned</h3>
+            <div class="solution">
+                <p>• Threat hunting requires curiosity and patience<br>
+                • Understanding attacker behavior helps find compromises<br>
+                • Good baselines are essential for finding anomalies<br>
+                • Threat intelligence guides hunting efforts</p>
+            </div>
+
+            <h3 style="color: #00d9ff; margin-top: 1.5rem;">Results</h3>
+            <div class="results">
+                <div class="result-item">✓ Analyzed 5+ TB of log data</div>
+                <div class="result-item">✓ Identified 3 suspicious patterns</div>
+                <div class="result-item">✓ Created 8 new detection rules</div>
+                <div class="result-item">✓ Improved proactive detection capabilities</div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p class="section-subtitle">Let's talk about cybersecurity</p>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Direct Contact</h3>
+                <div class="contact-item">
+                    <p>📧 <a href="mailto:wilfredamimo30@gmail.com">wilfredamimo30@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <p>💼 <a href="https://www.linkedin.com/in/wilfred-amimo" target="_blank">linkedin.com/in/wilfred-amimo</a></p>
+                </div>
+                <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.9rem;">Available for freelance projects, consulting, and learning opportunities. Typically respond within 24 hours.</p>
+            </div>
+
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number (optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required placeholder="Tell me what you're looking for..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Wilfred Amimo | Cybersecurity Specialist</p>
+        <p style="margin-top: 0.5rem;">Building secure systems through hands-on learning and practical implementation</p>
+    </footer>
+
+    <script>
+        function openModal(projectId) {
+            document.getElementById(projectId).style.display = "block";
+        }
+
+        function closeModal(projectId) {
+            document.getElementById(projectId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            const mailtoLink = `mailto:wilfredamimo30@gmail.com?subject=Portfolio Inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`)}`;
+            
+            window.location.href = mailtoLink;
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
